@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/style/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/style/accueil.css" rel="stylesheet" type="text/css" />
+    <link href="assets/style/article.css" rel="stylesheet" type="text/css" />
+    <title>Article</title>
+</head>
+<body>
+    {% include "header.html.twig"%}
+    <header>    
+        <h1>Animactu</h1>
+    </header>
+    <div class="main">
+        <div class="search">
+            <div id="search_icon_background">
+                <input class="searchbar" type="text" placeholder="Cherchez un sujet" />
+                <button class="btnr">Recherche</button>
+            </div>
+        </div>
+    <div class="content">
+
+    <h1>Articles</h1>
+    <section class="discover" id="discover">
+    
+    {% for article in articles %}
+        <article>
+            <h3>{{ article.image}}</h3>
+            <h3>{{ article.title}}</h3>
+            <h3>{{ article.date}}</h3>
+        </article>
+
+    {% endfor %}
+    </div>
+    
+
+    {% block content %}{% endblock %}
+    </div>
+    {% include "footer.html.twig"%}
+</body>
+</html>

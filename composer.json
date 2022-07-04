@@ -1,0 +1,19 @@
+{
+    "name": "ryan/projet",
+    "autoload": {
+        "psr-4": {
+            "Mvc\\": "src/",
+            "Config\\": "config/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Manapyzz",
+            "email": "alexandreb.picard@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0",
+        "bramus/router": "~1.6"
+    }
+}

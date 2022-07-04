@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/style/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/style/insciption.css" rel="stylesheet" type="text/css" />
+    <script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+    <title>Inscription</title>
+</head>
+<body>
+
+    <h3>Créer un compte</h3>
+
+    <section id="inscription">            
+        <form method="POST" action="" enctype='multipart/form-data'>
+            <div>
+                <article>
+                        <div>
+                            <div>
+                                <h5>Prénom</h5>
+                                <input type="text" name="firstname">
+                            </div>
+                            
+                            <div>
+                                <h5>Adresse e-mail</h5>
+                                <input type="text" name="mail">
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <h5>Mot de passe</h5>
+                                <input type="text" name="password">
+                            </div>
+                        </div>
+                </article>
+               
+            </div>
+            <input type="submit" name="buttonInscription" class="buttonInscription">
+        </from>
+    </section>
+  
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        function upload(num){
+            var imgcanvas = document.getElementById("canv"+num);
+            var fileinput = document.getElementById("finput"+num);
+            var image = new SimpleImage(fileinput);
+            image.drawTo(imgcanvas);
+        }
+    </script>
+    {% block content %}{% endblock %}
+
+</body>
+</html>

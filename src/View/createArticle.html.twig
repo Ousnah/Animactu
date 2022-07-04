@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/style/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/style/accueil.css" rel="stylesheet" type="text/css" />
+    <title>Create Article</title>
+</head>
+<body>
+
+
+    <h1>Hello {{ session.user.firstname }}</h1>
+    <a href="/admin">Admin</a>
+
+
+
+    <form method="post" action="/admin/createArticle" enctype='multipart/form-data'>
+        <input type="text" name="title" placeholder="Insert title">
+        <input type="file" name="image" accept="image/*">
+        <textarea name="bio" placeholder="Insert Bio"></textarea>
+        <input type="text" name="date" placeholder="Insert Date">
+        
+        <input type="submit" name="createEvent" value="Article">
+    </form>
+
+
+
+
+    <table>
+            <tr>
+                <td>Title</td>
+                <td>Image</td>
+                <td>Bio</td>
+                <td>Date</td>
+                <td>UpdateButton</td>
+                <td>DeleteButton</td>
+            </tr>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.title }}</td>
+                <td>{{ article.image }}</td>
+                <td>{{ article.bio }}</td>
+                <td>{{ article.date }}</td>
+                <td><img src="http://localhost/images/{{ article.image }}" style="height: 100px"></td>
+                <td>  
+                    <form method="POST" action="/admin/createArticle/updateArticle  ">
+                        <input type="submit" name="{{article.id}}" value="Update">
+                    </form>
+                </td>
+                <td>  
+                    <form method="POST" action="/admin/createArticle/deleteArticle  ">
+                        <input type="submit" name="{{article.id}}" value="Delete">
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+
+</body>
+</html>
